@@ -1,6 +1,6 @@
 # bamazon
 
-Bamazon is an amazon-like online shopping app.
+Bamazon is an amazon-like, CLI store app.
 
 As a customer, the app will let you order items from the store. 
 
