@@ -3,6 +3,7 @@ let inquirer = require ('inquirer');
 let colors = require('colors');
 let connection = require ('./connection');
 let prompts = require('./prompts');
+let Table = require ('cli-table');
 
 //start up the msyql connection
 connection.connect(err => {
@@ -31,12 +32,11 @@ let showProducts = () => {
 //questions for user 
 let purchasePrompt = () => {
     inquirer
-        .prompt(prompts.purchasePrompt)
+        .prompt(prompts.purchasingPrompts)
         .then(answers => {
             let product_id = answers.product_id;
             let amountAsked = answers.amount;
             order(product_id, amountAsked);
-            console.log(`Product ID: ${product_id} \nAmount: ${amountAsked}`);
         });
 };
 
@@ -48,9 +48,9 @@ let order = (product_ID, amount) => {
         //check if there is enough inventory for the order to succeed
         if (amount <= res[0].stock_quantity) {
             let totalCost = res[0].price * amount;
-            connection.query(`UPDATE products SET stock_quantity = stock_quantity 
-            - ${amount} WHERE product_id = ${product_ID}`);
-            console.log(`Your total cost for ${amount} ${res[0].product_name} is $${totalCost}. Thank you!`);
+            connection.query(`UPDATE products SET stock_quantity = stock_quantity - ${amount} WHERE product_id = ${product_ID}`);
+            console.log(`Your total cost for ${amount} ${res[0].product_name} is $${totalCost}. Thank you for shopping with us!`);
+            connection.end();
         }
         //if there isn't enough stock for the order, let the user know
         else {

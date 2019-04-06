@@ -12,8 +12,8 @@ a summary of the highest-grossing categories in the store.
 ## Built with 
 Javascript, Node.js, inquirer.js, colors.js, cli-table.js, mysql
 
-- Customer: 
-- Manager: 
+- Customer: https://vimeo.com/328712196
+- Manager: https://vimeo.com/328720069
 - Supervisor: 
 
 ## Installation

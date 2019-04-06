@@ -13,6 +13,13 @@ CREATE TABLE products(
     PRIMARY KEY (product_id)
 );
 
+CREATE TABLE departments (
+	department_id INT AUTO_INCREMENT NOT NULL, 
+    department_name VARCHAR(100) NOT NULL,
+    over_head_costs DECIMAL(12,2) NOT NULL,
+    PRIMARY KEY (product_id)
+);
+
 INSERT INTO products (product_id, product_name, category, price, stock_quantity)
 VALUES 
 (product_id, 'Osprey Pack', 'Accessories', 180, 50),
@@ -23,8 +30,9 @@ VALUES
 (product_id, 'Glad Tall Kitchen Drawstring Trash Bags', 'Groceries', 19.06, 1000),
 (product_id, 'BALORAY Lunch Bag Tote Bag Lunch Bag', 'Accessories', 7.64, 200),
 (product_id, 'Fisher-Price Harley-Davidson Tough Trike', 'Children', 40.98, 300),
-(product_id, 'BS-MALL Makeup Brushes', 'Cosmetics', 10.99, 100),
-(product_id, 'Mario Badescu Henna and Seamollient Shampoo', 'Beauty', 14, 600);
+(product_id, 'BS-MALL Makeup Brushes', 'Cosmetics', 10.99, 0),
+(product_id, 'Mario Badescu Henna and Seamollient Shampoo', 'Beauty', 14, 600),
+(product_id, 'Green Toys Wagon Outdoor Toy Orange', 'Children', 16.15, 30);
 
 SELECT * FROM products
 

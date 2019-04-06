@@ -1,4 +1,4 @@
-let purchasePrompts = [
+let purchasingPrompts = [
     {
         name: "product_id",
         type: "input",
@@ -64,7 +64,7 @@ let addProductPrompts = [
 ];
 
 module.exports = {
-    purchasePrompts,
+    purchasingPrompts,
     selectPrompts,
     inventoryPrompts,
     addProductPrompts 
