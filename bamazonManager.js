@@ -23,6 +23,9 @@ function productsView(res) {
       console.log(table.toString());
 };
 
+colWidths:[5,15,15,9,9]
+
+
 //start up the msyql connection
 connection.connect(err => {
     if (err) throw err;
