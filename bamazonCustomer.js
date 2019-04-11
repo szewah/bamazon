@@ -18,7 +18,7 @@ let showProducts = () => {
         if (err) throw err;
         let displayTable = new Table ({
             head: ["ID".bold.cyan, "Product Name".bold.cyan, "Category".bold.cyan, "Price".bold.cyan, "Stock".bold.cyan],
-            colWidths: [5,46,15,9,9]
+            colWidths: [5,46,15,9,9,9]
         });
         res.forEach(function(element) {
             displayTable.push([element.product_id, element.product_name, element.category,
@@ -48,7 +48,9 @@ let order = (product_ID, amount) => {
         //check if there is enough inventory for the order to succeed
         if (amount <= res[0].stock_quantity) {
             let totalCost = res[0].price * amount;
-            connection.query(`UPDATE products SET stock_quantity = stock_quantity - ${amount} WHERE product_id = ${product_ID}`);
+            connection.query(`UPDATE products SET stock_quantity = stock_quantity - ${amount}, 
+            product_sales =  product_sales + ${totalCost} WHERE product_id = ${product_ID}`);
+
             console.log(`Your total cost for ${amount} ${res[0].product_name} is $${totalCost}. Thank you for shopping with us!`);
             connection.end();
         }
@@ -59,4 +61,5 @@ let order = (product_ID, amount) => {
         }
     });
 };
+
 
