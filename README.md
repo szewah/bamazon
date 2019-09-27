@@ -10,11 +10,10 @@ As a supervisor, you can track product sales across departments and provide
 a summary of the highest-grossing categories in the store.
 
 ## Built with 
-Javascript, Node.js, inquirer.js, colors.js, cli-table.js, mysql
+JavaScript, Node.js, Inquirer.js, Colors.js, Cli-table.js, MySQL
 
 - Customer: https://vimeo.com/328712196
 - Manager: https://vimeo.com/328720069
-- Supervisor: 
 
 ## Installation
 
@@ -29,8 +28,4 @@ $ node bamazonSupervisor.js
 
 ## Acknowledgement
 Thanks to the instructors and teaching assistants at Columbia Univeristy Coding Bootcamp.
-
-## License
-MIT
-
 
